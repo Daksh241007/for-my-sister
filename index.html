@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You</title>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #f6e9ee, #fdeff4);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+
+    h1 {
+      color: #c94f7c;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: #c94f7c;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button.textme {
+      background: #25D366;
+    }
+
+    .message {
+      display: none;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>hey didi</h1>
+
+  <p>
+    today is not for pushing  
+    today is for breathing  
+    i made this so you don’t feel alone  
+  </p>
+
+  <div class="buttons">
+    <button onclick="show('sad')">open when you feel sad</button>
+    <button onclick="show('angry')">open when you feel angry</button>
+    <button onclick="show('tired')">open when you feel exhausted</button>
+    <button class="textme" onclick="textMe()">text me</button>
+  </div>
+
+  <div id="sad" class="message">
+    you’re allowed to feel low  
+    you don’t need to justify it  
+    cry if you want  
+    i’m still right here  
+  </div>
+
+  <div id="angry" class="message">
+    yes it’s unfair  
+    yes it hurts more than it should  
+    you’re not overreacting  
+    your body is fighting silently  
+  </div>
+
+  <div id="tired" class="message">
+    stop trying to be strong today  
+    rest is not weakness  
+    just exist  
+    i’ve got you  
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0e8c1bfa8f.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.message').forEach(m => m.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+}
+
+function textMe() {
+  window.open("https://wa.me/919545500571?text=I%20need%20you", "_blank");
+}
+</script>
+
+</body>
+</html>
